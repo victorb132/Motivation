@@ -10,6 +10,7 @@ import com.example.motivation.databinding.ActivityMainBinding
 import com.example.motivation.infra.MotivationConstants
 import com.example.motivation.infra.SecurityPreferences
 import com.example.motivation.repository.Mock
+import java.util.Locale
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -95,7 +96,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      * Atualiza frase de motivação
      * */
     private fun refreshPhrase() {
-        binding.textPhrase.text = mock.getPhrase(filter)
+        binding.textPhrase.text = mock.getPhrase(filter, Locale.getDefault().language)
     }
 
     /**
